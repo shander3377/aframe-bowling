@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"> </script>
 </head>
 <body>
-    <a-scene>
+    <a-scene id="scene">
         <a-assets>
             <a-asset-item id="pin" src="models/bowling_pin/scene.gltf">
                 <a-asset-item id="bowling_ball" src="models/bowling_ball/scene.gltf">
@@ -25,8 +25,7 @@
     <a-cursor id="cursor"></a-cursor>
     </a-entity>
 
-<a-entity ball id="ball"></a-entity>
-
+<a-entity ball-element></a-entity>
 <a-entity id="bowling_area">
 
 <a-plane
@@ -67,14 +66,19 @@ static-body
 visible="true">
 </a-cylinder>
 
+<a-box color="#7E7E7E" id="back-wall" position="0 0 -15"  depth="1" height="10" width="30" opacity="1" ></a-box>
+<a-box color="black" id="top-wall" position="0 5 -10"  depth="5" height="1" width="30" opacity="1" ></a-box>
 
+<a-box color="black" id="left-wall" position="-15 0 -15"  depth="5" height="10" width="1" opacity="1" ></a-box>
+<a-box color="black" id="right-wall" position="15 0 -15"  depth="5" height="10" width="1" opacity="1" ></a-box>
 </a-entity>
 
 <a-entity id="bowling pins">
     <a-entity
-    id="pin2"
+    id="pin1"
     gltf-model="#pin"
     position="0 0 -2"
+    dynamic-body="mass:0.3"
     
     scale="4 4 4"          
   >
@@ -84,6 +88,7 @@ visible="true">
     id="pin2"
     gltf-model="#pin"
     position="-0.5 0 -3"
+    dynamic-body="mass:0.3"
     
     scale="4 4 4"          
   >
@@ -93,6 +98,7 @@ visible="true">
     id="pin3"
     gltf-model="#pin"
     position="-3 0 -3"
+    dynamic-body="mass:0.3"
     
     scale="4 4 4"          
   >
@@ -103,6 +109,7 @@ visible="true">
     id="pin4"
     gltf-model="#pin"
     position="-2 0 -2"
+    dynamic-body="mass:0.3"
 
     
     scale="4 4 4"          
@@ -115,6 +122,7 @@ visible="true">
     id="pin5"
     gltf-model="#pin"
     position="-1 0 -1"
+    dynamic-body="mass:0.3"
     
     scale="4 4 4"          
   >
@@ -124,6 +132,7 @@ visible="true">
     id="pin6"
     gltf-model="#pin"
     position="0 0 0"
+    dynamic-body="mass:0.3"
     
     scale="4 4 4"          
   >
@@ -133,6 +142,7 @@ visible="true">
   id="pin7"
   gltf-model="#pin"
   position="1 0 -1"
+  dynamic-body="mass:0.3"
   
      scale="4 4 4"            
 >
@@ -143,6 +153,7 @@ visible="true">
   id="pin8"
   gltf-model="#pin"
   position="2 0 -2"
+  dynamic-body="mass:0.3"
   
      scale="4 4 4"            
 >
@@ -153,6 +164,7 @@ visible="true">
   id="pin9"
   gltf-model="#pin"
   position="3 0 -3"
+  dynamic-body="mass:0.3"
   
      scale="4 4 4"     
 >
@@ -163,6 +175,7 @@ visible="true">
   id="pin10"
   gltf-model="#pin"
   position="0.5 0 -3"
+  dynamic-body="mass:0.3"
   
      scale="4 4 4"            
 >
